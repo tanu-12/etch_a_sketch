@@ -6,17 +6,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div class="range">
-        <label for="Grid-size">Choose a size</label>
-        <input type="range" id="grid-select" name="Grid-size" min="0" max="100">
+    <div class="main_content">
+        <h1>Etch a <em>Sketch</em></h1>
+        <div class="range">
+            <label for="Grid-size">Choose a size</label>
+            <input type="range" id="grid-select" name="Grid-size" min="0" max="100">
+        </div>
+        <div class="playground">
+            <div class="options">
+                <button>Black</button>
+                <button>Multi color</button>
+                <button>Erase</button>
+            </div>
+            <div class="container">
+            </div>
+        </div>
+        <script src="main.js"></script>
     </div>
-    <div class="container">
-
-    </div>
-
 </body>
 
 </html>
