@@ -1,0 +1,72 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    text-align: center;
+
+
+}
+
+button {
+    padding: 1.5rem;
+
+}
+
+.main_content {
+    margin: 0 auto;
+    padding: 2.5 rem;
+    width: 100%;
+}
+
+.range {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding: 3.5 rem;
+    gap: 8em;
+    margin: 2em auto;
+    border: 2px solid yellow;
+
+}
+
+/* 
+label {}
+
+#grid-select {} */
+.playground {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    border: 2px solid red;
+    margin: 2em auto;
+
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    margin: auto 3em;
+    border: 2px solid red;
+    height: 50vh;
+    justify-content: space-between;
+
+}
+
+.container {
+    width: 50%;
+    height: 72vh;
+    border: 2px solid black;
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(16, 1fr);
+    margin: 0 auto;
+}
+
+.gridItem {
+    border: 2px solid grey;
+    padding: 2px;
+}
