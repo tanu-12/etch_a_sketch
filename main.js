@@ -41,6 +41,59 @@ for (let m = 0; m < buttons.length; m++) {
             }
         });
     }
+    else if (buttons[m].value == `erase`) {
+        buttons[m].addEventListener("click", function (event) {
+            for (let k = 0; k < divs.length; k++) {
+                divs[k].addEventListener("mouseover", function (event) {
+                    event.target.style.backgroundColor = `white`;
+                });
+
+            }
+        });
+    }
+    else if (buttons[m].value == `rainbow`) {
+        buttons[m].addEventListener("click", function (event) {
+            for (let k = 0; k < divs.length; k++) {
+                divs[k].addEventListener("mouseover", function (event) {
+                    r = g = b = 0;
+                    r = Math.floor(Math.random() * 256);
+                    g = Math.floor(Math.random() * 256);
+                    b = Math.floor(Math.random() * 256);
+                    event.target.style.backgroundColor = `rgb(${r},${g},${b})`;
+                });
+
+            }
+        });
+
+
+
+    }
+    else if (buttons[m].value == `darken`) {
+        buttons[m].addEventListener("click", function (event) {
+            for (let k = 0; k < divs.length; k++) {
+                divs[k].addEventListener("mouseover", function (event) {
+                    r = g = b = 0;
+                    r = Math.floor(Math.random() * 256);
+                    g = Math.floor(Math.random() * 256);
+                    b = Math.floor(Math.random() * 256);
+                    event.target.style.backgroundColor = `rgb(${r},${g},${b})`;
+                    divs[k].addEventListener("click", function (event) {
+                        let rtenpercent = r / 10;
+                        let gtenpercent = r / 10;
+                        let btenpercent = r / 10;
+                        event.target.style.backgroundColor = `rgb(${r -= rtenpercent},${g -= gtenpercent},${b -= btenpercent})`;
+
+
+                    });
+
+                });
+            }
+        });
+
+
+
+    }
+
 
 
 
