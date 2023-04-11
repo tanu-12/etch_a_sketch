@@ -2,6 +2,7 @@ const container = document.querySelector(".container"); // storing our main cont
 const range = document.getElementById("grid-select"); // creating a html collection for user input
 const buttons = document.getElementsByClassName("color"); // creating a html collection for user input for color
 var r, g, b;
+alert("If you want to darken the shade just click on it!!");
 //initial layout 
 for (let i = 1; i <= 256; i++) {
     let div = document.createElement("div");
@@ -70,8 +71,9 @@ for (let m = 0; m < buttons.length; m++) {
     }
     else if (buttons[m].value == `darken`) {
         buttons[m].addEventListener("click", function (event) {
+
             for (let k = 0; k < divs.length; k++) {
-                divs[k].addEventListener("mouseover", function (event) {
+                divs[k].addEventListener("mouseover", function (event) { //darken has some extra steps what it does is that it lets you color randomly but if you want to darken the color it ask to click on the specific grid//
                     r = g = b = 0;
                     r = Math.floor(Math.random() * 256);
                     g = Math.floor(Math.random() * 256);
