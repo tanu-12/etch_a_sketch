@@ -1,7 +1,7 @@
 const container = document.querySelector(".container"); // storing our main container in container
 const range = document.getElementById("grid-select"); // creating a html collection for user input
 const buttons = document.getElementsByClassName("color"); // creating a html collection for user input for color
-var r, g, b;
+
 alert("If you want to darken the shade just click on it!!");
 //initial layout 
 for (let i = 1; i <= 256; i++) {
@@ -52,6 +52,66 @@ for (let m = 0; m < buttons.length; m++) {
             }
         });
     }
+
+    else if (buttons[m].value == `darken`) {
+        buttons[m].addEventListener("click", function (event) {
+
+            for (let k = 0; k < divs.length; k++) {
+                divs[k].addEventListener("click", function (event) {
+
+
+                    //         let tenPercentBlue=0;
+                    //         let tenPercentGreen=0;
+                    //         let tenPercentRed=0;
+                    // //  divs[k].addEventListener("click", function (event) {
+                    let r = 0;
+                    let g = 0;
+                    let b = 0;
+
+                    r = Math.floor(Math.random() * 256);
+                    g = Math.floor(Math.random() * 256);
+                    b = Math.floor(Math.random() * 256);
+
+                    event.target.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+                });
+            }
+            for (let i = 0; i < divs.length; i++) {
+                let r = 0;
+                let g = 0;
+                let b = 0;
+
+                r = Math.floor(Math.random() * 256);
+                g = Math.floor(Math.random() * 256);
+                b = Math.floor(Math.random() * 256);
+                divs[i].addEventListener("click", function (event) {
+
+
+
+                    let tenPercentRed = r / 10;
+                    let tenPercentGreen = g / 10;
+                    let tenPercentBlue = b / 10;
+                    event.target.style.backgroundColor = `rgb(${r -= tenPercentRed}, ${g -= tenPercentGreen}, ${b -= tenPercentBlue})`;
+
+                });
+            }
+
+            //    event.addEventListener("click", function (event)
+
+            //  divs[k].addEventListener("click", function (event) {
+            // r = 0;
+            // g = 0;
+            // b = 0;
+
+            // r = Math.floor(Math.random() * 256);
+            // g = Math.floor(Math.random() * 256);
+            // b = Math.floor(Math.random() * 256);
+
+
+
+
+
+        });
+    }
     else if (buttons[m].value == `rainbow`) {
         buttons[m].addEventListener("click", function (event) {
             for (let k = 0; k < divs.length; k++) {
@@ -69,36 +129,5 @@ for (let m = 0; m < buttons.length; m++) {
 
 
     }
-    else if (buttons[m].value == `darken`) {
-        buttons[m].addEventListener("click", function (event) {
-
-            for (let k = 0; k < divs.length; k++) {
-                divs[k].addEventListener("mouseover", function (event) { //darken has some extra steps what it does is that it lets you color randomly but if you want to darken the color it ask to click on the specific grid//
-                    r = g = b = 0;
-                    r = Math.floor(Math.random() * 256);
-                    g = Math.floor(Math.random() * 256);
-                    b = Math.floor(Math.random() * 256);
-                    event.target.style.backgroundColor = `rgb(${r},${g},${b})`;
-                    divs[k].addEventListener("click", function (event) {
-                        let rtenpercent = r / 10;
-                        let gtenpercent = r / 10;
-                        let btenpercent = r / 10;
-                        event.target.style.backgroundColor = `rgb(${r -= rtenpercent},${g -= gtenpercent},${b -= btenpercent})`;
-
-
-                    });
-
-                });
-            }
-        });
-
-
-
-    }
-
-
-
-
-
-
 }
+
