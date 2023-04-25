@@ -46,7 +46,7 @@ for (let m = 0; m < buttons.length; m++) {
         buttons[m].addEventListener("click", function (event) {
             for (let k = 0; k < divs.length; k++) {
                 divs[k].addEventListener("mouseover", function (event) {
-                    event.target.style.backgroundColor = `white`;
+                    event.target.style.backgroundColor = `#dad7cd`;
                 });
 
             }
